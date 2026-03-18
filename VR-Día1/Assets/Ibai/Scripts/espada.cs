@@ -1,0 +1,27 @@
+using UnityEngine;
+
+public class espada : MonoBehaviour
+{
+    
+    [SerializeField] CountManager countManager;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Cubo"))
+        {
+            countManager.Cubo();
+            Destroy(collision.gameObject);
+        }
+    }
+}
