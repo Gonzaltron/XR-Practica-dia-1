@@ -8,7 +8,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] float cooldown;
     [SerializeField] float distance;
     float actualCooldown;
-    Vector3 spawnPoint;
+    [SerializeField] Vector3 spawnPoint;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,11 +22,13 @@ public class Spawner : MonoBehaviour
         actualCooldown += Time.deltaTime;
         if (actualCooldown >= cooldown)
         {
-            GameObject cube = Instantiate<GameObject>(target, transform.position, transform.rotation);
+            spawnPoint.y = player.transform.position.y;
+            GameObject cube = Instantiate<GameObject>(target, this.transform.position, this.transform.rotation);
             cube.GetComponent<Cube>().player = player;
             cube.GetComponent<Cube>().speed = speed;
             cube.transform.position = spawnPoint;
-            cube.transform.position = new Vector3(0, 1.36144f, 0);
+            cube.GetComponent<Cube>().spawnPoint = spawnPoint;
+            //cube.transform.position = new Vector3(cube.transform.position.x, 1.36144f, cube.transform.position.z);
             actualCooldown = 0;
         }
     }
