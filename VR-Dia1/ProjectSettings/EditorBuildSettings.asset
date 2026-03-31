@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Ibai/Escenas/Menu.unity
+    guid: 88f5bb15060198a4e90da8636b0c0e47
+  - enabled: 1
     path: Assets/Ibai/Escenas/pocho saber.unity
     guid: 6eeecbf6b3cd3f540984b2293897be9b
   - enabled: 1

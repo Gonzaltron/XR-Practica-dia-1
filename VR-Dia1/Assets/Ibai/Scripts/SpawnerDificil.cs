@@ -28,7 +28,6 @@ public class SpawnerDificil : MonoBehaviour
             cube.GetComponent<Cube>().speed = speed;
             cube.transform.position = spawnPoint;
             cube.GetComponent<Cube>().spawnPoint = spawnPoint;
-            //cube.transform.position = new Vector3(cube.transform.position.x, 1.36144f, cube.transform.position.z);
             actualCooldown = 0;
         }
         else if (actualCooldown >= cooldown)
@@ -39,7 +38,6 @@ public class SpawnerDificil : MonoBehaviour
             cube.GetComponent<Cube>().speed = speed;
             cube.transform.position = spawnPoint;
             cube.GetComponent<Cube>().spawnPoint = spawnPoint;
-            //cube.transform.position = new Vector3(cube.transform.position.x, 1.36144f, cube.transform.position.z);
             actualCooldown = 0;
         }
         spawnPoint = player.transform.forward * distance;

@@ -10,12 +10,17 @@ public class CountManager : MonoBehaviour
     [SerializeField] int maxPuntos;
     bool fin;
     public DropdownOption drop;
+    public GameObject espada;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         puntos = GameObject.FindAnyObjectByType<TMP_Text>();
-        puntosC = 0;
+        puntosC = 1;
         puntos.text = puntosC.ToString();
+    }
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
@@ -31,7 +36,7 @@ public class CountManager : MonoBehaviour
     public void Cubo()
     {
             puntosC++;
-            puntos.text = puntosC.ToString();
+            puntos.text = -1 +puntosC.ToString();
             if (puntosC == maxPuntos)
             {
                 Terminar();
@@ -56,15 +61,27 @@ public class CountManager : MonoBehaviour
     {
         if(o == 0)
         {
-            maxPuntos = 10;
+            maxPuntos = 11;
         }
         else if(o == 1)
         {
-            maxPuntos = 20;
+            maxPuntos = 21;
         }
         if(o == 2)
         {
-            maxPuntos = 30;
+            maxPuntos = 31;
+        }
+    }
+
+    void Espadas(int j)
+    {
+        if(j == 1)
+        {
+            espada.SetActive(false);
+        }
+        else 
+        {
+            espada.SetActive(true);
         }
     }
 }
