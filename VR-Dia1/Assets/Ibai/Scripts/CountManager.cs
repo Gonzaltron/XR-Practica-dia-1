@@ -9,7 +9,7 @@ public class CountManager : MonoBehaviour
     int puntosC;
     [SerializeField] int maxPuntos;
     bool fin;
-    public DropdownOption drop;
+    //public DropdownOption drop;
     public GameObject espada;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
